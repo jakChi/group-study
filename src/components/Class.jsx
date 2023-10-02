@@ -1,12 +1,22 @@
+import data from "../CLASS_DATA.json";
 import StudyMaterial from "./StudyMaterial";
 
-const Class = () => {
+const Class = (keyWord) => {
+  console.log(keyWord);
   return (
-    <>
-      <h1>Biochemistry class</h1>
-      <StudyMaterial />
-    </>
+    <div className="class">
+      {data
+        .filter((group) => group.class_name.toLowerCase().includes("hy"))
+        .map((obj, i) => (
+          <div key={i}>
+            <h1 className="class-name" key={i}>
+              <span className="class-id">{obj.class_id}</span>. {obj.class_name}
+            </h1>
+            <StudyMaterial />
+          </div>
+        ))}
+    </div>
   );
-}
+};
 
-export default Class
+export default Class;

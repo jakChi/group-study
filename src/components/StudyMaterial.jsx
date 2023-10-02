@@ -2,7 +2,7 @@ import Topic from './Topic'
 
 const StudyMaterial = () => {
   return (
-    <div>
+    <div className='study-material'>
       <Topic />
     </div>
   )

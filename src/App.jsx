@@ -1,19 +1,17 @@
-import './App.css'
-import Gate from './components/Gate'
-import Leaderboard from './components/Leaderboard'
-import RandomQoutes from './components/RandomQoutes'
-import Class from './components/Class'
+import "./App.css";
+import Leaderboard from "./components/Leaderboard";
+import RandomQoutes from "./components/RandomQoutes";
+import Gate from "./components/Gate";
 
-function App() {
 
+function App() {  
   return (
-    <>
+    <div>
       <RandomQoutes />
       <Gate />
-      <Class />
       <Leaderboard />
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

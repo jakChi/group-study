@@ -1,11 +1,23 @@
+import { useEffect, useState } from "react";
+import "./RandomQoutes.css";
 
 const RandomQoutes = () => {
-  return (
-    <div className="qoute-card">
-      <h3 className="qoute">Study Smart not Hard</h3>
-      <p className="quote-info">Qoute by someone</p>
-    </div>
-  );
-}
+  const [currentQoute, setCurrentQoute] = useState("");
 
-export default RandomQoutes
+  useEffect(() => {
+    fetch("https://type.fit/api/quotes")
+      .then((res) => res.json())
+      .then((data) =>
+        setCurrentQoute(data[Math.floor(Math.random() * data.length)])
+      );
+  }, []);
+
+  return (
+    <blockquote className="qoute-box">
+      &ldquo;{currentQoute.text}&rdquo;
+      <footer className="quote-info">{currentQoute.author}</footer>
+    </blockquote>
+  );
+};
+
+export default RandomQoutes;

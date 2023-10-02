@@ -8,4 +8,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
-//aq createRootshi vsvamt root.renders, da root unda iyos html elementi rendershi unda iyos App
